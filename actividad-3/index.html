@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Ramos Mejía</title>
+    <!-- Modo Claro por defecto -->
+    <link id="theme-link" rel="stylesheet" href="estilo-claro.css">
+    <script>
+        function cambiarTema(tema) {
+            document.getElementById('theme-link').setAttribute('href', tema);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Veterinaria Ramos Mejía</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" onclick="cambiarTema('estilo-claro.css')">Modo Claro</a></li>
+                <li><a href="#" onclick="cambiarTema('estilo-oscuro.css')">Modo Oscuro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Inicio -->
+        <section id="inicio">
+            <div class="imagen">
+                <h2>El bienestar de tu mascota es nuestra prioridad</h2>
+            </div>
+            <div class="contenido">
+                <h3>Formulario de inscripción</h3>
+                <form>
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="mascota">Nombre de la/s Mascota/s:</label>
+                    <input type="text" id="mascota" name="mascota" required><br><br>
+
+                    <label for="tipo-mascota">Tipo de Mascota:</label>
+                    <select id="tipo-mascota" name="tipo-mascota" required>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="otro">Otro</option>
+                    </select><br><br>
+
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicios">
+            <h2>Servicios</h2>
+                       <ul>
+                <li><strong>Consultas veterinarias:</strong> Atendemos a tu mascota para chequeos de rutina y consultas especializadas.</li>
+                <li><strong>Vacunación:</strong> Aseguramos la salud de tu mascota mediante un programa de vacunación adaptado a sus necesidades.</li>
+                <li><strong>Cirugías:</strong> Contamos con un equipo capacitado para realizar procedimientos quirúrgicos de todo tipo.</li>
+                <li><strong>Emergencias:</strong> Atención veterinaria las 24 horas del día para casos urgentes.</li>
+                <li><strong>Peluquería:</strong> Servicios de baño, corte y cuidado estético para tu mascota.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Teléfono de emergencias (24 horas): +54 11 1234-5670</p>
+            <p>Email: veterinariaramos@gmail.com</p>
+        </section>
+    </main>
+</body>
+</html>
