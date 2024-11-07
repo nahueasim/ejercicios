@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardel - Modos Claro y Oscuro</title>
+    <!-- Enlace a Bootstrap CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        /* Estilos adicionales para los modos */
+        .bg-dark-mode {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .bg-light-mode {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        /* Estilo específico para la tabla en modo oscuro */
+        .table-dark-mode {
+            background-color: #3a3b3c; /* Fondo oscuro para la tabla */
+            color: #ffffff; /* Texto claro */
+        }
+    </style>
+</head>
+<body class="bg-light-mode">
+
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white" href="#">Gardel y Su Historia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button id="modoClaro" class="btn btn-light mr-2">Modo Claro</button>
+                </li>
+                <li class="nav-item">
+                    <button id="modoOscuro" class="btn btn-dark">Modo Oscuro</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container mt-5">
+        <!-- Título -->
+        <h1 class="display-4 text-center mb-4">Carlos Gardel - El Zorzal Criollo</h1>
+
+        <!-- Imagen -->
+        <div class="text-center mb-4">
+            <img src="gardel.jpg" alt="Carlos Gardel" class="img-fluid rounded" style="max-width: 500px; height: auto;">
+        </div>
+
+        <!-- Tabla -->
+        <h2 class="text-center mb-3">Datos Personales</h2>
+        <table class="table table-bordered text-center" id="tablaDatos">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Año de Nacimiento</th>
+                    <th>Lugar de Nacimiento</th>
+                    <th>Fallecimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1890</td>
+                    <td>Toulouse, Francia</td>
+                    <td>1935</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript para cambiar el modo claro y oscuro -->
+    <script>
+        $(document).ready(function() {
+            // Cambiar a modo claro
+            $("#modoClaro").on("click", function() {
+                $("body").removeClass("bg-dark-mode").addClass("bg-light-mode");
+                $("nav").removeClass("navbar-dark bg-dark").addClass("navbar-light bg-primary");
+                $("h1, h2, .navbar-brand").removeClass("text-white").addClass("text-dark");
+                $("#tablaDatos").removeClass("table-dark-mode"); // Quitar modo oscuro de la tabla
+            });
+
+            // Cambiar a modo oscuro
+            $("#modoOscuro").on("click", function() {
+                $("body").removeClass("bg-light-mode").addClass("bg-dark-mode");
+                $("nav").removeClass("navbar-light bg-primary").addClass("navbar-dark bg-dark");
+                $("h1, h2, .navbar-brand").removeClass("text-dark").addClass("text-white");
+                $("#tablaDatos").addClass("table-dark-mode"); // Aplicar modo oscuro a la tabla
+            });
+        });
+    </script>
+
+</body>
+</html>
